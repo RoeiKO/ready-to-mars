@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Button from 'components/UI/Button/Button'
 import Time from 'components/Time/Time'
 
-import { TIMERR_LOCAL_STORAGE_PREFIX } from 'utils/constants'
+import { TIMER_LOCAL_STORAGE_PREFIX } from 'utils/constants'
 
 import classes from './Timer.module.scss'
 
@@ -14,7 +14,7 @@ const Timer = ({ timerId, durationSeconds, title }) => {
     const [time, setTime] = useState({ minutes: 0, seconds: 0 })
 
     useEffect(() => {
-        const key = TIMERR_LOCAL_STORAGE_PREFIX + timerId
+        const key = TIMER_LOCAL_STORAGE_PREFIX + timerId
         const now = new Date().getTime()
 
         let deadline = localStorage.getItem(key)
@@ -52,7 +52,7 @@ const Timer = ({ timerId, durationSeconds, title }) => {
     }, [timerId, session])
 
     const handleResetTimer = () => {
-        const key = TIMERR_LOCAL_STORAGE_PREFIX + timerId
+        const key = TIMER_LOCAL_STORAGE_PREFIX + timerId
         const deadline = new Date().getTime() + durationSeconds * 1000
         localStorage.setItem(key, deadline)
 
@@ -66,17 +66,17 @@ const Timer = ({ timerId, durationSeconds, title }) => {
             <Time {...time} />
             <Button className={classes.timer__action} onClick={handleResetTimer}>Reset timer</Button>
         </div>
-    );
+    )
 }
 
 Timer.propTypes = {
     timerId: PropTypes.string.isRequired,
     durationSeconds: PropTypes.number,
     title: PropTypes.string
-};
+}
 
 Timer.defaultProps = {
     durationSeconds: 5
 }
 
-export default Timer;
+export default Timer

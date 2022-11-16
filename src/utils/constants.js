@@ -1,1 +1,1 @@
-export const TIMERR_LOCAL_STORAGE_PREFIX = 'timers_'
+export const TIMER_LOCAL_STORAGE_PREFIX = 'timers_'
