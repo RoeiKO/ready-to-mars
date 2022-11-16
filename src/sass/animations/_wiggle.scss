@@ -1,0 +1,31 @@
+@keyframes wiggle {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        -webkit-transform: translate3d(3%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(3%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    50% {
+        -webkit-transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    75% {
+        -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+        transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animated--wiggle {
+    animation-name: wiggle;
+    -webkit-animation-name: wiggle;
+}

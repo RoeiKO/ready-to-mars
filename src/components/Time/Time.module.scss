@@ -1,0 +1,16 @@
+.time {
+    display: flex;
+    align-items: center;
+    
+    gap: 5px;
+    
+    user-select: none;
+
+    &__card {
+        background-color: rgba(var(--rgb-grey), 0.08);
+
+        padding: .5rem;
+
+        border-radius: 100px;
+    }
+}
